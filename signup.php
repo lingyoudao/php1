@@ -41,6 +41,10 @@
                 <td align="left"><input type="password" name="cpw"></td>
             </tr>
             <tr>
+                <td align="right">邮箱:</td>
+                <td align="left"><input name="email"></td>
+            </tr>
+            <tr>
                 <td align="right">性别:</td>
                 <td align="left">
                     <input type="radio" name="sex" value="1" checked>男
