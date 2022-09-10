@@ -29,7 +29,7 @@ if($pw<>$cpw){
     exit;
 }else{
     if(!preg_match('/^[a-zA-Z0-9_*]{6,10}$/', $pw)){
-        echo '<script>alert("密码格式必填，为字母和数字以及下划线_或*组合，长度3-10位");history.back()</script>';
+        echo '<script>alert("密码格式必填，为字母和数字以及下划线_或*组合，长度6-10位");history.back()</script>';
         exit;
     }
 }

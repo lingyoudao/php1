@@ -22,12 +22,12 @@
     </h1>
     <h2>
         <a href="index.php" >首页</a>
-        <a href="signup.php" class="current">注册</a>
-        <a href="login.php">登陆</a>
+        <a href="signup.php" >注册</a>
+        <a href="login.php" class="current">登陆</a>
         <a href="modify.php">个人资料</a>
         <a href="admin.php">后台管理</a>
     </h2>
-    <form action="postReg.php" method="POST" onsubmit="return check()">
+    <form action="postLogin.php" method="POST" onsubmit="return check()">
         <table align="center" border="1" style="border-collapse: collapse;" cellpadding="10" cellspacing="0">
             <tr>
                 <td align="right">用户名:</td>
@@ -36,29 +36,6 @@
             <tr>
                 <td align="right">密码:</td>
                 <td align="left"><input type="password" name="pw"><span class="red">*</span></td>
-            </tr>
-            <tr>
-                <td align="right">确认密码:</td>
-                <td align="left"><input type="password" name="cpw"><span class="red">*</span></td>
-            </tr>
-            <tr>
-                <td align="right">邮箱:</td>
-                <td align="left"><input name="email"></td>
-            </tr>
-            <tr>
-                <td align="right">性别:</td>
-                <td align="left">
-                    <input type="radio" name="sex" value="1" checked>男
-                    <input type="radio" name="sex" value="0">女
-                </td>
-            </tr>
-            <tr>
-                <td align="right">爱好:</td>
-                <td align="left">
-                    <input type="checkbox" name="fav[]" value="听音乐">听音乐
-                    <input type="checkbox" name="fav[]" value="玩游戏">玩游戏
-                    <input type="checkbox" name="fav[]" value="踢足球">踢足球
-                </td>
             </tr>
             <tr>
                 <td align="right">
@@ -75,9 +52,6 @@
     function check(){
         let username = document.getElementsByName("username")[0].value.trim();
         let pw = document.getElementsByName("pw")[0].value.trim();
-        let cpw = document.getElementsByName("cpw")[0].value.trim();
-        let email = document.getElementsByName("email")[0].value.trim();
-
         let nameReg = /^[a-zA-Z0-9]{3,10}$/ //正则表达式中以/^$/标记开始和结束,长度3-10位
         if(!nameReg.test(username))
         {
@@ -91,21 +65,7 @@
             return false;
         }
 
-        if(pw!=cpw){
-            alert("密码和确认密码必须相同");
-            return false;
-        }
-
-        let emailReg = /^[a-zA-Z0-9_\-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/
-        if(email.length>0){
-            if(emailReg.test(email)){
-                alert('信箱格式不正确!');
-                return false;
-            }
-        }
-
         return true;
-
     }
 </script>
 </body>
