@@ -6,13 +6,9 @@ $cpw = trim($_POST['cpw']);
 $email = $_POST['email'];
 $sex = $_POST['sex'];
 $fav = implode(",", $_POST['fav']);
-//2. 连接数据库
-$conn = mysqli_connect("localhost", "root", "root", "info",33060);
-if(!$conn){
-    die("连接服务器数据库失败");
-}
-//3. 设置字符集
-mysqli_query($conn, "set names utf8");
+
+include "conn.php";
+
 //增加判断规则
 if(!strlen($username) || !strlen($pw)){
     echo '<script>alert("用户名和密码不能为空");history.back()</script>';
