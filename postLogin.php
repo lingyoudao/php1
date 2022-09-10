@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //1.使用$_POST或$_GET全局变量来获取数据
 $username = trim($_POST['username']);
 $pw = trim($_POST['pw']);
@@ -23,6 +25,7 @@ $sql = "select * from userinfo where username='$username' and pw ='" .md5($pw). 
 $result = mysqli_query($conn, $sql);
 $num = mysqli_num_rows($result);
 if($num){
+    $_SESSION['loggedusername'] = $username;
     echo '<script>alert("登陆成功");</script>';
 }else{
     echo '<script>alert("登陆失败");</script>';
