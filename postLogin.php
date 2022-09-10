@@ -26,8 +26,8 @@ $result = mysqli_query($conn, $sql);
 $num = mysqli_num_rows($result);
 if($num){
     $_SESSION['loggedusername'] = $username;
-    echo '<script>alert("登陆成功");</script>';
+    echo '<script>alert("登陆成功");location.href="index.php";</script>';
 }else{
-    echo '<script>alert("登陆失败");</script>';
+    echo '<script>alert("登陆失败");history.back();</script>';
 }
 ?>

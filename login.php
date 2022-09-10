@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +20,7 @@
 </style>
 <body>
 <div class="main">
-    <h1>
-        会员管理系统
-    </h1>
-    <h2>
-        <a href="index.php" >首页</a>
-        <a href="signup.php" >注册</a>
-        <a href="login.php" class="current">登陆</a>
-        <a href="modify.php">个人资料</a>
-        <a href="admin.php">后台管理</a>
-    </h2>
+<?php include_once "nav.php" ?>
     <form action="postLogin.php" method="POST" onsubmit="return check()">
         <table align="center" border="1" style="border-collapse: collapse;" cellpadding="10" cellspacing="0">
             <tr>
