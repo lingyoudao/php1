@@ -26,8 +26,16 @@ $result = mysqli_query($conn, $sql);
 $num = mysqli_num_rows($result);
 if($num){
     $_SESSION['loggedusername'] = $username;
+    $info = mysqli_fetch_array($result);
+    if($info['admin']){
+        $_SESSION['isAdmin']=1;
+    }else{
+        $_SESSION['isAdmin']=0;
+    }
     echo '<script>alert("登陆成功");location.href="index.php";</script>';
 }else{
+    unset($_SESSION['isAdmin']);
+    unset($_SESSION['loggedusername']);
     echo '<script>alert("登陆失败");history.back();</script>';
 }
 ?>

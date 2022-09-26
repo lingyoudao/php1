@@ -11,7 +11,7 @@
     <?php
         if(isset($_SESSION['loggedusername']) && $_SESSION['loggedusername']<>''){
     ?>
-        <div class="logged">当前登陆者: <?php echo $_SESSION['loggedusername']?><span class="logout"><a href="logout.php">注销登陆</a></span></div>   
+        <div class="logged">当前登陆者: <?php echo $_SESSION['loggedusername']?> <?php if($_SESSION['isAdmin']) echo '<span style="color:red"> 欢迎管理员 </span>' ?> <span class="logout"><a href="logout.php">注销登陆</a></span></div>   
     <?php  
         }  
         //$id = isset($_GET['id']) ? $_GET['id'] : 1;
